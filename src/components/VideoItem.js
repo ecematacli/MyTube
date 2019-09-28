@@ -1,15 +1,23 @@
-import React from 'react'
+import React from 'react';
+import './VideoItem.css'
 
-const VideoItem = ({ video }) => {
-  console.log(video.snippet.thumbnails.medium.url)
-  if (!video) {
-    return <h3>Loading...</h3>
-  }
 
-  const item = video.snippet.thumbnails.medium.url
+
+const VideoItem = ({ video, onVideoSelection }) => {
+  const { snippet } = video
+
+  const item = snippet.thumbnails.medium.url;
+  const title = snippet.title;
+
   return (
-    <div>
-      <img src={item}></img>
+    <div onClick={() => onVideoSelection(video)} className="video-item item">
+      <img
+        alt={title}
+        className="ui image"
+        src={item} />
+      <div className="content">
+        <div className="header">{title}</div>
+      </div>
     </div>
   )
 }
