@@ -1,26 +1,22 @@
-import React from 'react'
+import React from 'react';
 
 const VideoDetail = ({ selectedVideo }) => {
-  console.log(selectedVideo)
+  console.log(selectedVideo);
   if (!selectedVideo) {
-    return <h3>Loading...</h3>
+    return <h3>Loading...</h3>;
   }
-  const videoSrc = `https://www.youtube.com/embed/${selectedVideo.id.videoId}`
+  const videoSrc = `https://www.youtube.com/embed/${selectedVideo.id.videoId}`;
   return (
     <div>
-      <div className="ui embed">
+      <div>
         <iframe title="video player" src={videoSrc} />
       </div>
-      <div className="ui segment">
-        <h4 className="ui header">{selectedVideo.snippet.title}</h4>
+      <div>
+        <h4>{selectedVideo.snippet.title}</h4>
         <p>{selectedVideo.snippet.description}</p>
-
       </div>
-
     </div>
-  )
-
-
-}
+  );
+};
 
 export default VideoDetail;
