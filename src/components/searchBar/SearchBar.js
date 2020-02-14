@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './SearchBar..css';
+import './SearchBar.css';
 
 export default class SearchBar extends React.Component {
   state = {
@@ -11,6 +11,7 @@ export default class SearchBar extends React.Component {
   };
   onFormSubmit = e => {
     e.preventDefault();
+
     this.props.onSubmission(this.state.term);
   };
   render() {

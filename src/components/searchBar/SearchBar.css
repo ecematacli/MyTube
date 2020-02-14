@@ -17,7 +17,7 @@
 .search-input {
   padding: 0.7rem 1rem;
   border-radius: 80px;
-  width: 70%;
+  width: 50%;
   transition: all 0.2s;
   border: 1px solid #ccc;
 }
@@ -26,6 +26,7 @@
   outline: none;
   width: 90%;
 }
+
 .search-button {
   box-shadow: inset 0px 1px 0px 0px #ffffff;
   background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);

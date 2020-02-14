@@ -1,9 +1,10 @@
 import React from 'react';
+
+import logo from '../assets/logo.png';
 import SearchBar from './searchBar/SearchBar';
 import youtube from './api/youtube';
-import VideoList from './VideoList';
-import VideoDetail from './VideoDetail';
-
+import VideoList from './videoList/VideoList';
+import VideoDetail from './videoDetail/VideoDetail';
 class App extends React.Component {
   state = {
     videos: [],
@@ -30,20 +31,24 @@ class App extends React.Component {
   };
 
   render() {
+    const logoStyle = {
+      width: 75,
+      height: 75,
+      margin: '20px 20px -5px'
+    };
     return (
       <div>
+        <div>
+          <img style={logoStyle} alt="logo" src={logo} />
+        </div>
         <SearchBar onSubmission={this.onSubmission} />
         <div>
-          <div>
-            <div>
-              <VideoDetail selectedVideo={this.state.selectedVideo} />
-            </div>
-            <VideoList
-              videos={this.state.videos}
-              onVideoSelection={this.onVideoSelection}
-            />
-          </div>
+          <VideoDetail selectedVideo={this.state.selectedVideo} />
         </div>
+        <VideoList
+          videos={this.state.videos}
+          onVideoSelection={this.onVideoSelection}
+        />
       </div>
     );
   }
